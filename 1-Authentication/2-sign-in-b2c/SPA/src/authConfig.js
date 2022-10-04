@@ -5,29 +5,29 @@
 
 import { LogLevel } from "@azure/msal-browser";
 
-/**
+/**tenant
  * Enter here the user flows and custom policies for your B2C application
  * To learn more about user flows, visit: https://docs.microsoft.com/en-us/azure/active-directory-b2c/user-flow-overview
  * To learn more about custom policies, visit: https://docs.microsoft.com/en-us/azure/active-directory-b2c/custom-policy-overview
  */
 export const b2cPolicies = {
     names: {
-        signUpSignIn: "b2c_1_susi",
+        signUpSignIn: "B2C_1_t20signupsignin",
         forgotPassword: "b2c_1_reset",
         editProfile: "b2c_1_edit_profile"
     },
     authorities: {
         signUpSignIn: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_susi",
+            authority: "https://t20b2c.b2clogin.com/t20b2c.onmicrosoft.com/B2C_1_t20signupsignin",
         },
         forgotPassword: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_reset",
+            authority: "https://t20b2c.b2clogin.com/t20b2c.onmicrosoft.com/b2c_1_reset",
         },
         editProfile: {
-            authority: "https://fabrikamb2c.b2clogin.com/fabrikamb2c.onmicrosoft.com/b2c_1_edit_profile"
+            authority: "https://t20b2c.b2clogin.com/t20b2c.onmicrosoft.com/b2c_1_edit_profile"
         }
     },
-    authorityDomain: "fabrikamb2c.b2clogin.com"
+    authorityDomain: "t20b2c.b2clogin.com"
 }
 
 /**
@@ -37,7 +37,7 @@ export const b2cPolicies = {
  */
 export const msalConfig = {
     auth: {
-        clientId: "2fdd06f3-7b34-49a3-a78b-0cf1dd87878e", // This is the ONLY mandatory field that you need to supply.
+        clientId: "dfc41c62-bb90-4d3b-adc2-b837b9569f71", // This is the ONLY mandatory field that you need to supply.
         authority: b2cPolicies.authorities.signUpSignIn.authority, // Use a sign-up/sign-in user-flow as a default authority
         knownAuthorities: [b2cPolicies.authorityDomain], // Mark your B2C tenant's domain as trusted.
         redirectUri: "/", // Points to window.location.origin. You must register this URI on Azure Portal/App Registration.
